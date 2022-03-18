@@ -1,0 +1,38 @@
+(name ai
+    (lambda ()
+        (if (= (random 3) 0)
+            'rock
+            (if (= (random 2) 0)
+                'paper
+                'scissors))));
+(name match
+    (lambda (player-move ai-move)
+        (if (= 'rock player-move)
+            (if (= 'paper ai-move)
+                (" You lose!)
+                   (if (= 'scissors ai-move)
+                        (" You win!)
+                        'Tie!))
+                   (if (= 'paper player-move)
+                        (if (= 'scissors ai-move)
+                            (" You lose!)
+                            (if (= 'rock ai-move)
+                                (" You win!) 'Tie!))
+                                (if (= 'scissors player-move)
+                                    (if (= 'rock ai-move)
+                                        (" You lose!)
+                                        (if (= 'paper ai-move)
+                                            (" You win!)
+                                            'Tie!))
+                                    (" invalid move))))));
+
+
+(set ai-move (ai));
+(echo (" Enter a move));
+(set player-move (scan (" [rock, paper, or scissors. exit to close]:)));
+(if (= player-move 'exit) (goto 40) ());
+(echo (match player-move ai-move));
+(echo (" AI used:));
+(echo ai-move);
+(goto 31);
+();

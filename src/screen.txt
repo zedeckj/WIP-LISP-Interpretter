@@ -1,0 +1,4 @@
+(pixel 'red 0 0);
+(show 'test);
+(pixel 'black 0 0);
+(show 'test);
